@@ -2,74 +2,114 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Para o amor da minha vida ❤️</title>
+<title>Para Anninha ❤️</title>
 
 <style>
+
 body{
-font-family: Arial;
-background: linear-gradient(135deg,#ff758c,#ff7eb3);
-display:flex;
-align-items:center;
-justify-content:center;
-height:100vh;
 margin:0;
-}
-
-.card{
-background:white;
-padding:40px;
-border-radius:20px;
+font-family:Arial;
+background:linear-gradient(135deg,#ff7eb3,#ff758c);
+color:white;
 text-align:center;
-max-width:500px;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
-
-h1{
-color:#ff4d6d;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
 }
 
 button{
-background:#ff4d6d;
+padding:15px 30px;
+font-size:18px;
 border:none;
-padding:12px 20px;
-color:white;
-font-size:16px;
 border-radius:10px;
+background:white;
+color:#ff4d6d;
 cursor:pointer;
 }
 
 button:hover{
-background:#ff1f4b;
+background:#ffe6ec;
 }
+
+#galeria{
+display:none;
+position:relative;
+width:100vw;
+height:100vh;
+}
+
+img{
+width:260px;
+height:260px;
+object-fit:cover;
+border-radius:20px;
+position:absolute;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+#foto1{top:40px; left:40px;}
+#foto2{top:40px; right:40px;}
+#foto3{bottom:40px; left:40px;}
+#foto4{bottom:40px; right:40px;}
+
+#coracao{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:90px;
+animation:pulsar 1.5s infinite;
+}
+
+@keyframes pulsar{
+0%{transform:translate(-50%,-50%) scale(1);}
+50%{transform:translate(-50%,-50%) scale(1.3);}
+100%{transform:translate(-50%,-50%) scale(1);}
+}
+
 </style>
 
 </head>
 
 <body>
 
-<div class="card">
+<div id="inicio">
 
-<h1>Oi meu amor ❤️</h1>
+<h1>Oi Anninha meu amor ❤️</h1>
+<p>Eu fiz uma surpresa pra você</p>
 
-<p>
-Eu fiz esse pequeno site só pra te lembrar o quanto você é especial pra mim.
-</p>
+<button onclick="mostrar()">Clique aqui</button>
 
-<p>
-Você é uma das melhores coisas que aconteceram na minha vida.
-</p>
+</div>
 
-<button onclick="mostrarMensagem()">Clique aqui 💌</button>
+<div id="galeria">
 
-<p id="mensagem"></p>
+<img id="foto1" src="amor1.jpg">
+<img id="foto2" src="amor2.jpg">
+<img id="foto3" src="amor3.jpg">
+<img id="foto4" src="amor4.jpg">
+
+<div id="coracao">❤️</div>
+
+<audio id="musica" autoplay loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
 
 </div>
 
 <script>
-function mostrarMensagem(){
-document.getElementById("mensagem").innerHTML =
-"Eu te amo muito ❤️";
+
+function mostrar(){
+
+document.getElementById("inicio").style.display="none";
+document.getElementById("galeria").style.display="block";
+
+document.getElementById("musica").play();
+
 }
+
 </script>
 
 </body>
