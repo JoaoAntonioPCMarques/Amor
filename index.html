@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Para o amor da minha vida ❤️</title>
+
+<style>
+body{
+font-family: Arial;
+background: linear-gradient(135deg,#ff758c,#ff7eb3);
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+margin:0;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:20px;
+text-align:center;
+max-width:500px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h1{
+color:#ff4d6d;
+}
+
+button{
+background:#ff4d6d;
+border:none;
+padding:12px 20px;
+color:white;
+font-size:16px;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff1f4b;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Oi meu amor ❤️</h1>
+
+<p>
+Eu fiz esse pequeno site só pra te lembrar o quanto você é especial pra mim.
+</p>
+
+<p>
+Você é uma das melhores coisas que aconteceram na minha vida.
+</p>
+
+<button onclick="mostrarMensagem()">Clique aqui 💌</button>
+
+<p id="mensagem"></p>
+
+</div>
+
+<script>
+function mostrarMensagem(){
+document.getElementById("mensagem").innerHTML =
+"Eu te amo muito ❤️";
+}
+</script>
+
+</body>
+</html>
