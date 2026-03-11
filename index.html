@@ -39,33 +39,39 @@ height:100vh;
 /* fotos */
 
 img{
-width:200px;
-height:200px;
+width:180px;
+height:180px;
 object-fit:cover;
 border-radius:20px;
 position:absolute;
 box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* lado esquerdo */
+/* canto superior esquerdo */
 
-#foto1{top:5%; left:2%;}
-#foto2{top:30%; left:2%;}
-#foto3{top:55%; left:2%;}
-#foto4{top:80%; left:2%;}
+#foto1{top:5%; left:5%;}
+#foto2{top:5%; left:20%;}
 
-/* lado direito */
+/* canto superior direito */
 
-#foto5{top:5%; right:2%;}
-#foto6{top:30%; right:2%;}
-#foto7{top:55%; right:2%;}
-#foto8{top:80%; right:2%;}
+#foto5{top:5%; right:20%;}
+#foto6{top:5%; right:5%;}
+
+/* canto inferior esquerdo */
+
+#foto3{bottom:5%; left:5%;}
+#foto4{bottom:5%; left:20%;}
+
+/* canto inferior direito */
+
+#foto7{bottom:5%; right:20%;}
+#foto8{bottom:5%; right:5%;}
 
 /* coração */
 
 #coracao{
 position:absolute;
-top:35%;
+top:38%;
 left:50%;
 transform:translate(-50%,-50%);
 font-size:90px;
@@ -78,11 +84,28 @@ animation:pulsar 1.5s infinite;
 100%{transform:translate(-50%,-50%) scale(1);}
 }
 
+/* sapo pulando */
+
+#sapo{
+position:absolute;
+top:45%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:50px;
+animation:pular 1s infinite;
+}
+
+@keyframes pular{
+0%{transform:translate(-50%,0);}
+50%{transform:translate(-50%,-25px);}
+100%{transform:translate(-50%,0);}
+}
+
 /* contador */
 
 #tempo{
 position:absolute;
-top:50%;
+top:55%;
 left:50%;
 transform:translate(-50%,-50%);
 font-size:22px;
@@ -95,7 +118,7 @@ border-radius:15px;
 
 #carta{
 position:absolute;
-top:65%;
+top:70%;
 left:50%;
 transform:translateX(-50%);
 background:white;
@@ -151,15 +174,19 @@ transform:translateY(110vh);
 
 <img id="foto1" src="amor1.jpeg">
 <img id="foto2" src="amor2.jpeg">
-<img id="foto3" src="amor3.jpeg">
-<img id="foto4" src="amor4.jpeg">
 
 <img id="foto5" src="amor5.jpeg">
 <img id="foto6" src="amor6.jpeg">
+
+<img id="foto3" src="amor3.jpeg">
+<img id="foto4" src="amor4.jpeg">
+
 <img id="foto7" src="amor7.jpeg">
 <img id="foto8" src="amor8.jpeg">
 
 <div id="coracao">❤️</div>
+
+<div id="sapo">🐸</div>
 
 <div id="tempo"></div>
 
@@ -197,6 +224,8 @@ document.getElementById("galeria").style.display="block";
 
 document.getElementById("musica").src =
 "https://www.youtube.com/embed/jp288zfsNTI?autoplay=1&loop=1&playlist=jp288zfsNTI";
+
+/* corações caindo */
 
 for(let i=0;i<30;i++){
 
