@@ -19,6 +19,8 @@ align-items:center;
 overflow:hidden;
 }
 
+/* botão */
+
 button{
 padding:15px 30px;
 font-size:18px;
@@ -32,6 +34,8 @@ cursor:pointer;
 button:hover{
 background:#ffe6ec;
 }
+
+/* galeria */
 
 #galeria{
 display:none;
@@ -54,6 +58,8 @@ box-shadow:0 10px 25px rgba(0,0,0,0.3);
 #foto3{bottom:40px; left:40px;}
 #foto4{bottom:40px; right:40px;}
 
+/* coração central */
+
 #coracao{
 position:absolute;
 top:50%;
@@ -67,6 +73,21 @@ animation:pulsar 1.5s infinite;
 0%{transform:translate(-50%,-50%) scale(1);}
 50%{transform:translate(-50%,-50%) scale(1.3);}
 100%{transform:translate(-50%,-50%) scale(1);}
+}
+
+/* corações caindo */
+
+.heart{
+position:fixed;
+top:-10px;
+font-size:24px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+}
 }
 
 </style>
@@ -93,9 +114,14 @@ animation:pulsar 1.5s infinite;
 
 <div id="coracao">❤️</div>
 
-<audio id="musica" autoplay loop>
-<source src="musica.mp3" type="audio/mpeg">
-</audio>
+<!-- música do youtube -->
+
+<iframe id="musica"
+width="0"
+height="0"
+src=""
+allow="autoplay">
+</iframe>
 
 </div>
 
@@ -106,7 +132,25 @@ function mostrar(){
 document.getElementById("inicio").style.display="none";
 document.getElementById("galeria").style.display="block";
 
-document.getElementById("musica").play();
+/* inicia música */
+document.getElementById("musica").src =
+"https://www.youtube.com/embed/jp288zfsNTI?autoplay=1&loop=1&playlist=jp288zfsNTI";
+
+/* cria corações */
+
+for(let i=0;i<30;i++){
+
+let heart = document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(heart);
+
+}
 
 }
 
