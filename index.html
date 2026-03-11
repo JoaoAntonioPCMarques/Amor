@@ -84,21 +84,19 @@ animation:pulsar 1.5s infinite;
 100%{transform:translate(-50%,-50%) scale(1);}
 }
 
-/* sapo pulando */
+/* sapo andando */
 
 #sapo{
 position:absolute;
 top:45%;
-left:50%;
-transform:translate(-50%,-50%);
+left:-100px;
 font-size:50px;
-animation:pular 1s infinite;
+animation:andar 20s linear infinite;
 }
 
-@keyframes pular{
-0%{transform:translate(-50%,0);}
-50%{transform:translate(-50%,-25px);}
-100%{transform:translate(-50%,0);}
+@keyframes andar{
+0%{left:-100px;}
+100%{left:110%;}
 }
 
 /* contador */
@@ -190,7 +188,7 @@ transform:translateY(110vh);
 
 <div id="tempo"></div>
 
-<div id="carta" onclick="abrirCarta()">💌 Abrir carta</div>
+<div id="carta" onclick="toggleCarta()">💌 Abrir carta</div>
 
 <div id="mensagemCarta">
 
@@ -242,10 +240,18 @@ document.body.appendChild(heart);
 
 }
 
-/* carta */
+/* carta abre e fecha */
 
-function abrirCarta(){
-document.getElementById("mensagemCarta").style.display="block";
+function toggleCarta(){
+
+let carta=document.getElementById("mensagemCarta");
+
+if(carta.style.display==="block"){
+carta.style.display="none";
+}else{
+carta.style.display="block";
+}
+
 }
 
 /* contador */
